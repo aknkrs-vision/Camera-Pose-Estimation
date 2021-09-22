@@ -2,3 +2,4 @@
 In this project, opencv methods are used to estimate camera position.
 
 # Requirements
+opencv, numpy, matplotlib
