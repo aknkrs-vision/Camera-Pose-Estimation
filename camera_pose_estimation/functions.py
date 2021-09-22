@@ -33,8 +33,6 @@ def calibrate_camera():
     ret, camera_matrix, dist_coeffs, rotation_vector, translation_vector = cv2.calibrateCamera(
         [vr3d], [vr2d], img1.shape[::-1], K, dist_coeffs, flags=cv2.CALIB_USE_INTRINSIC_GUESS)
 
-    print(rotation_vector,translation_vector)
-
 # Feature Matching
 def get_best_matches(ref_des, q_des, ratio=0.8):
     bf = cv2.BFMatcher()
