@@ -35,7 +35,7 @@ def calibrate_camera():
 
     print(rotation_vector,translation_vector)
 
-
+# Feature Matching
 def get_best_matches(ref_des, q_des, ratio=0.8):
     bf = cv2.BFMatcher()
     matches = bf.knnMatch(ref_des, q_des, k=2) 
@@ -47,7 +47,7 @@ def get_best_matches(ref_des, q_des, ratio=0.8):
             best_matches.append(m)
     return best_matches
 
-
+ 
 def get_rotation(R):
     sy = math.sqrt(R[0, 0] * R[0, 0] + R[1, 0] * R[1, 0])
 
@@ -63,6 +63,7 @@ def get_rotation(R):
         z = 0
 
     return np.array([x, y, z])
+
 
 def get_translation(ref_img, query_img):
     global rotation_estimation
